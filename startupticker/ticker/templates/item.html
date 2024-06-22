@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<a href="/">Back</a>
+
+<h1>{{ item.title }}</h1>
+<p>{{ item.pub_date }}</p>
+<p>{{ item.description }}</p>
+<p>Startup: <a href="{{item.startup.website}}?ref=ausstartupticker.com.au">{{ item.startup.name }}</a></p>
+
+<div>
+  <h2>Sources</h2>
+  <ul>
+    {% for source in item.sources.all %}
+      <li>
+        <a href="{{ source.url }}">{{ source.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{%endblock%}

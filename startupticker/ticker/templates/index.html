@@ -1,0 +1,16 @@
+{%extends "base.html"%} 
+
+{%block content%} 
+  <main>
+    <h1>Aus Startup Ticker</h1>
+    {% for item in items %}
+      <hr />
+      <a href="/item/{{ item.slug }}">
+        <div style="display:flex;">
+          <p>{{ item.pub_date }}</p>
+          <h2>{{ item.title }}</h2>
+        </div>
+      </a>
+    {% endfor %} 
+  </main>
+{%endblock%}
